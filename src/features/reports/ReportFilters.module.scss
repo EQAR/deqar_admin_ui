@@ -1,0 +1,42 @@
+.DateFilter {
+    margin-bottom: 12px;
+}
+
+.DateControl {
+    width: 100%;
+}
+
+.YearInput {
+    flex: 1 1 auto !important;
+    width: auto;
+    min-width: 0;
+}
+
+.CurrentCheckbox {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center;
+    flex: none;
+    height: 32px;
+    width: 96px;
+    padding-inline: 10px;
+    white-space: nowrap;
+    line-height: 1;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-inline-start: 0;
+    border-radius: 0 3px 3px 0;
+
+    :global(.ant-checkbox) {
+        top: 0;
+    }
+
+    :global(.ant-checkbox + span) {
+        padding-inline: 6px 0;
+        line-height: 1;
+    }
+
+    &:hover {
+        border-color: #20a8d8;
+    }
+}

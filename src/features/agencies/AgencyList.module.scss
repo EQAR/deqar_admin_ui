@@ -1,0 +1,20 @@
+.TableLink {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--table-link-hover-color);
+    }
+}
+
+.Validity {
+    line-height: 1.35;
+    text-align: center;
+}
+
+.ValidityTo {
+    color: rgba(0, 0, 0, 0.45);
+}

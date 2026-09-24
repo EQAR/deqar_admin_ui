@@ -1,0 +1,27 @@
+.Slide {
+    display: grid;
+    transition:
+        grid-template-rows 300ms ease,
+        opacity 200ms ease;
+}
+
+.Open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.Closed {
+    grid-template-rows: 0fr;
+    opacity: 0;
+}
+
+.Content {
+    min-height: 0;
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Slide {
+        transition: none;
+    }
+}

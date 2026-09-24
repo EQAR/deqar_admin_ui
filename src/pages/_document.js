@@ -4,11 +4,15 @@ import {createCache, extractStyle, StyleProvider} from "@ant-design/cssinjs";
 const MyDocument = () => {
   return (
     <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
+        <Head>
+            <link rel="icon" href="/images/cropped-eqar-favicon-32x32.png" sizes="32x32"/>
+            <link rel="icon" href="/images/cropped-eqar-favicon-192x192.png" sizes="192x192"/>
+            <link rel="apple-touch-icon-precomposed" href="/images/cropped-eqar-favicon-180x180.png"/>
+        </Head>
+        <body>
+        <Main/>
+        <NextScript/>
+        </body>
     </Html>
   );
 }

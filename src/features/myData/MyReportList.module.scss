@@ -1,0 +1,52 @@
+.TableLink {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--table-link-hover-color);
+    }
+}
+
+.Identifier {
+    display: grid;
+    gap: 2px;
+    justify-items: center;
+}
+
+.LocalIdentifier {
+    max-width: 120px;
+    color: rgba(0, 0, 0, 0.55);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.WrappedCell {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.Uploaded,
+.Validity {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ValidityTo {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 11px;
+}
+
+.Flag {
+    min-width: 64px;
+    margin-inline-end: 0;
+    text-align: center;
+}
+
+.Actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}

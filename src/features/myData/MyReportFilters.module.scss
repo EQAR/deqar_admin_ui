@@ -1,0 +1,24 @@
+.DateFilter {
+    display: flex;
+}
+
+.DateControl {
+    width: 100%;
+}
+
+.YearInput {
+    width: 88px !important;
+    flex: 0 0 88px !important;
+}
+
+.CurrentCheckbox {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    min-width: 0;
+    padding-inline: 10px;
+    border: 1px solid #d9d9d9;
+    border-inline-start: 0;
+    border-radius: 0 4px 4px 0;
+    background: #fff;
+}

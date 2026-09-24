@@ -1,0 +1,70 @@
+.Editor {
+    :global(.sun-editor) {
+        border-radius: 0.25rem !important;
+        border-color: #e4e7ea !important;
+    }
+
+    :global(.se-container) {
+        z-index: 0;
+    }
+
+    :global(.se-toolbar) {
+        border-bottom: 1px solid #e4e7ea;
+        outline: 0;
+    }
+
+    :global(.se-btn-module-border) {
+        border: none;
+        border-radius: 0;
+    }
+
+    :global(.se-menu-list .se-btn) {
+        width: 26px;
+        height: 26px;
+        border-radius: 0;
+        color: #5c6873;
+    }
+
+    :global(.se-menu-list .se-btn>svg) {
+        width: 12px;
+        height: 12px;
+    }
+
+    :global(.sun-editor-editable) {
+        line-height: 1.5715;
+        padding: 5px 11px;
+    }
+
+    :global(.sun-editor-editable p),
+    :global(.sun-editor-editable li) {
+        margin: 0;
+    }
+}
+
+.Disabled {
+    :global(.sun-editor) {
+        border: 1px solid #d9d9d9 !important;
+        cursor: not-allowed;
+    }
+
+    :global(.sun-editor-editable) {
+        color: rgba(0, 0, 0, 0.65) !important;
+        background-color: rgba(0, 0, 0, 0.04) !important;
+        cursor: not-allowed;
+    }
+
+    :global(.sun-editor-editable *) {
+        color: inherit !important;
+    }
+}
+
+.Loading {
+    min-height: 108px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background: #fff;
+}
+
+:global(.ant-form-item-has-error) .Editor :global(.sun-editor) {
+    border-color: #ff4d4f;
+}

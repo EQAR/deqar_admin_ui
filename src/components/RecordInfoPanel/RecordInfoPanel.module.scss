@@ -1,0 +1,118 @@
+.Panel {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+}
+
+.Section + .Section {
+    margin-top: 18px;
+}
+
+.List {
+    margin-top: 8px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+}
+
+.ListItem,
+.FlagItem {
+    display: flex;
+    min-height: 35px;
+    align-items: center;
+    padding: 7px 12px;
+    background: transparent;
+}
+
+.PublicLink {
+    overflow-wrap: anywhere;
+}
+
+.FlagItem + .FlagItem {
+    border-top: 1px solid #f0f0f0;
+}
+
+.Flag {
+    flex: 0 0 auto;
+    min-width: 68px;
+    margin-inline-end: 12px;
+    text-align: center;
+}
+
+.FlagMessage {
+    min-width: 0;
+    color: rgba(0, 0, 0, 0.65);
+    overflow-wrap: anywhere;
+}
+
+.FlagRemove {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.InternalNote {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.HistoryList {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    background: transparent;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+}
+
+.HistoryItem {
+    padding: 9px 12px;
+
+    & + & {
+        border-top: 1px solid #f0f0f0;
+    }
+}
+
+.HistorySummary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 10px;
+
+    time {
+        color: rgba(0, 0, 0, 0.65);
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+.HistoryAction {
+    min-width: 58px;
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: 600;
+}
+
+.HistoryDetails {
+    margin-top: 3px;
+    padding-left: 68px;
+    color: rgba(0, 0, 0, 0.45);
+    overflow-wrap: anywhere;
+
+    > span:first-child {
+        color: rgba(0, 0, 0, 0.65);
+    }
+}
+
+.HistoryNote {
+    display: block;
+    margin-top: 3px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 576px) {
+    .HistoryDetails {
+        padding-left: 0;
+    }
+}

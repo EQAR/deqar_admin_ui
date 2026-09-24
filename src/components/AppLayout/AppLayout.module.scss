@@ -1,0 +1,70 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+}
+
+.Sider {
+    position: sticky !important;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+.Logo {
+    height: 64px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(255 255 255 / 75%);
+    font-weight: 600;
+
+    img {
+        width: 110px;
+        max-height: 36px;
+        object-fit: contain;
+    }
+}
+
+.Menu {
+    padding-bottom: 48px;
+}
+
+.Content {
+    margin: 0 16px;
+    overflow: hidden;
+}
+
+.Breadcrumb {
+    margin: 16px 0;
+}
+
+.ContentPanel {
+    min-height: 280px;
+    padding: 16px;
+}
+
+.Footer {
+    padding: 12px 24px;
+    text-align: center;
+    color: rgb(0 0 0 / 45%);
+}
+
+@media (max-width: 720px) {
+    .Header > span:first-child {
+        display: none;
+    }
+
+    .Content {
+        margin: 0 8px;
+    }
+
+    .Breadcrumb {
+        margin: 8px 0;
+    }
+}

@@ -1,0 +1,31 @@
+.Field {
+    margin-bottom: 12px;
+}
+
+.MainField,
+.TransliterationField {
+    margin-bottom: 0;
+}
+
+.TransliterationField {
+    padding-top: 8px;
+}
+
+.Toggle {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font: inherit;
+    font-size: 12px;
+    line-height: 18px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px dotted currentColor;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        color: #20a8d8;
+    }
+}

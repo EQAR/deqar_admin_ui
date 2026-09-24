@@ -1,0 +1,26 @@
+.FormAlert {
+    margin-bottom: 16px;
+}
+
+.Loading {
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+}
+
+.Actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding-top: 8px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 576px) {
+    .Actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

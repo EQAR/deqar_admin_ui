@@ -1,0 +1,17 @@
+.TableLink {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--table-link-hover-color);
+    }
+}
+
+.Footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}

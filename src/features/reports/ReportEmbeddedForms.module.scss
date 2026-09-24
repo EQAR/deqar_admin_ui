@@ -1,0 +1,58 @@
+.AssignedField {
+    margin-bottom: 12px;
+}
+
+.AssignedLabel {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.AssignedList {
+    margin-top: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.AssignedItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.AssignedText {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.AssignedEmpty {
+    padding: 7px 10px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.RepeatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.RepeatRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.RepeatField {
+    flex: 1;
+    min-width: 0;
+}

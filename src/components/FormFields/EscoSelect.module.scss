@@ -1,0 +1,17 @@
+.Select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    :global(.ant-select-selector) {
+        min-width: 0;
+    }
+
+    :global(.ant-select-selection-item) {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

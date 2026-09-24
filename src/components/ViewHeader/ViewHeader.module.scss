@@ -1,0 +1,25 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 32px;
+}
+
+.Extra {
+    display: flex;
+    align-items: center;
+    margin-inline-start: auto;
+}
+
+@media (max-width: 720px) {
+    .Header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .Extra {
+        margin-inline-start: 0;
+    }
+}

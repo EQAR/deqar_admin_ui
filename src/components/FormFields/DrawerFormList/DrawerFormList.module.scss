@@ -1,0 +1,84 @@
+.Field {
+    margin-bottom: 12px;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.Label {
+    color: rgba(0, 0, 0, 0.88);
+}
+
+.List {
+    overflow: hidden;
+    border: 1px dashed #d9d9d9;
+    border-radius: 3px;
+}
+
+.Item {
+    display: flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 4px 6px 4px 10px;
+    border-bottom: 1px dashed #d9d9d9;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.ItemButton {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font: inherit;
+    text-align: left;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    cursor: pointer;
+    background: none;
+    border: 0;
+
+    span {
+        border-bottom: 1px dotted currentColor;
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: #20a8d8;
+        outline: 0;
+    }
+}
+
+.RemoveButton {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        color: rgba(0, 0, 0, 0.65) !important;
+        background: transparent !important;
+    }
+}
+
+.Empty {
+    min-height: 34px;
+    padding: 6px 10px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.ListDisabled {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-style: solid;
+}
+
+.Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}

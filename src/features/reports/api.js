@@ -1,0 +1,18 @@
+export const reportsApi = {
+    list: "/adminapi/v1/browse/all/reports/",
+    myList: "/adminapi/v1/browse/my/reports/",
+    create: "/adminapi/v1/reports/",
+    detail: (id) => `/adminapi/v1/reports/${id}/`,
+    removeFlag: (id) => `/adminapi/v1/reports/remove_flag/${id}/`,
+    agencies: "/adminapi/v1/select/agency/",
+    allAgencies: "/adminapi/v1/select/agency_all/",
+    activities: "/adminapi/v1/select/agency_esg_activity_by_agency/",
+    institutions: "/adminapi/v1/select/institutions/",
+    statuses: "/adminapi/v1/select/report_status/",
+    decisions: "/adminapi/v1/select/report_decision/",
+    languages: "/adminapi/v1/select/language/",
+    qfEheaLevels: "/adminapi/v1/select/qf_ehea_level/",
+    countries: "/adminapi/v1/select/country/",
+    degreeOutcomes: "/adminapi/v1/select/degree_outcome/",
+    assessments: "/adminapi/v1/select/assessment/",
+};

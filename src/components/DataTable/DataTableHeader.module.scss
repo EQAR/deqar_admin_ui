@@ -1,0 +1,27 @@
+.Header {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.FilterToggle {
+    height: auto;
+    padding-inline: 0;
+    color: inherit !important;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+        color: inherit !important;
+    }
+}
+
+@media (max-width: 720px) {
+    .Header {
+        white-space: normal;
+    }
+}

@@ -1,0 +1,27 @@
+.TableLink {
+    color: inherit;
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--table-link-hover-color);
+    }
+}
+
+.Flag {
+    min-width: 64px;
+    margin-inline-end: 0;
+    text-align: center;
+}
+
+.WrappedCell {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.CreatedAt {
+    text-align: center;
+    white-space: nowrap;
+}
