@@ -203,7 +203,7 @@ const ActivityGroupEditor = ({
                 activity_type: getId(data.activity_type),
             }))
             .catch((error) => notification.error({
-                message: "Activity group could not be loaded",
+                title: "Activity group could not be loaded",
                 description: error?.response?.data?.detail || error.message,
             }));
     }, [groupForm, groupId, notification, open]);
@@ -216,11 +216,11 @@ const ActivityGroupEditor = ({
                 method: groupId ? "put" : "post",
                 data: values,
             });
-            notification.success({ message: `Activity group ${groupId ? "updated" : "created"}.` });
+            notification.success({ title: `Activity group ${groupId ? "updated" : "created"}.` });
             onSaved(data);
         } catch (error) {
             notification.error({
-                message: "Activity group could not be saved",
+                title: "Activity group could not be saved",
                 description: error?.response?.data?.detail || "Please review the fields.",
             });
         } finally {
