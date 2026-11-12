@@ -102,7 +102,7 @@ const ActivityList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Activities could not be loaded"
+                    title="Activities could not be loaded"
                     description={error?.response?.data?.detail || error?.response?.data?.error || error.message}
                     style={{ marginBottom: 16 }}
                 />
