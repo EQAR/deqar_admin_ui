@@ -23,7 +23,7 @@ const Home = () => {
                 <Col xs={24} md={8}>
                     <Card size="small" title={<Space><UploadOutlined />CSV upload</Space>}>
                         <Typography.Paragraph>Validate and ingest reports from a CSV file.</Typography.Paragraph>
-                        <Button disabled>Coming next</Button>
+                        <Link href="/submit-csv"><Button type="primary">Upload CSV</Button></Link>
                     </Card>
                 </Col>
                 <Col xs={24} md={8}>

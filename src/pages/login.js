@@ -39,7 +39,7 @@ export default function LoginPage() {
                 <Image src="/images/deqar-logo.png" alt="DEQAR" width={180} height={54} priority style={{ display: "block", margin: "0 auto 24px" }} />
                 <Typography.Title level={3}>Sign in</Typography.Title>
                 <Typography.Paragraph type="secondary">Use your DEQAR account to continue.</Typography.Paragraph>
-                {error && <Alert type="error" showIcon message={error} style={{ marginBottom: 16 }} />}
+                {error && <Alert type="error" showIcon title={error} style={{ marginBottom: 16 }} />}
                 <Form layout="vertical" onFinish={onSubmit} requiredMark={false}>
                     <Form.Item name="username" label="Username" rules={[{ required: true, message: "Enter your username." }]}>
                         <Input autoComplete="username" autoFocus />
