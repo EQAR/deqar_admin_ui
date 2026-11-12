@@ -48,7 +48,7 @@ export const useEntityForm = ({ form, endpoint, method, entityName, onSuccess, n
             });
 
             notification.success({
-                message: "Success",
+                title: "Success",
                 description: `${entityName} was ${method === "post" ? "created" : "updated"}.`,
             });
             await onSuccess?.(response.data);
@@ -65,7 +65,7 @@ export const useEntityForm = ({ form, endpoint, method, entityName, onSuccess, n
             }
 
             notification.error({
-                message: "The form could not be saved",
+                title: "The form could not be saved",
                 description: errors[0] || "Please review the highlighted fields.",
             });
         } finally {
