@@ -1,0 +1,109 @@
+.Page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Steps {
+    max-width: 840px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.UploadSection,
+.ResultSection {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 16px;
+}
+
+.FileSummary {
+    min-height: 64px;
+}
+
+.FileIcon {
+    color: #52c41a;
+    font-size: 28px;
+}
+
+.FileMeta {
+    display: block;
+    margin-top: 2px;
+}
+
+.SectionTitle {
+    margin: 0 !important;
+}
+
+.Progress {
+    display: grid;
+    gap: 4px;
+}
+
+.Table :global(.ant-table-row) {
+    cursor: pointer;
+}
+
+.Table :global(.ant-table-cell) {
+    transition: background-color 180ms ease;
+}
+
+.Table :global(.ant-table-cell-fix-left) {
+    background: inherit;
+}
+
+.CellInput {
+    min-width: 120px;
+}
+
+.SelectedRow > :global(.ant-table-cell) {
+    box-shadow: inset 0 2px 0 #20a8d8, inset 0 -2px 0 #20a8d8;
+}
+
+.SelectedRow > :global(.ant-table-cell:first-child) {
+    box-shadow: inset 2px 0 0 #20a8d8, inset 0 2px 0 #20a8d8, inset 0 -2px 0 #20a8d8;
+}
+
+.SuccessRow > :global(.ant-table-cell) {
+    background: #f6ffed;
+}
+
+.ErrorRow > :global(.ant-table-cell) {
+    background: #fff2f0;
+}
+
+.ErrorList,
+.ResultDetails {
+    margin-top: 12px;
+}
+
+.ErrorList,
+.WarningBlock {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.WarningBlock {
+    margin-top: 12px;
+}
+
+.ListHeader {
+    display: block;
+    padding: 8px 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.ListItem {
+    align-items: flex-start;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    .UploadSection,
+    .ResultSection {
+        padding: 12px;
+    }
+}
