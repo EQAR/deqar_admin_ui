@@ -144,7 +144,7 @@ const ReportFlagList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Report flags could not be loaded"
+                    title="Report flags could not be loaded"
                     description={error?.response?.data?.detail || error?.response?.data?.error || error.message}
                     style={{ marginBottom: 16 }}
                 />
