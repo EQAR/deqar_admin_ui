@@ -7,6 +7,7 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = (phase) => ({
   reactStrictMode: true,
+  output: "standalone",
   outputFileTracingRoot: projectRoot,
   distDir: phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next",
   env: {

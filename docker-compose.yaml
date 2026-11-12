@@ -1,0 +1,38 @@
+name: deqar-admin
+
+services:
+  admin:
+    image: deqar-admin-ui:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_WEBSITE_AGENCY: ${REACT_APP_WEBSITE_AGENCY:?Set the public agency URL template}
+        REACT_APP_WEBSITE_COUNTRY: ${REACT_APP_WEBSITE_COUNTRY:?Set the public country URL template}
+        REACT_APP_WEBSITE_INSTITUTION: ${REACT_APP_WEBSITE_INSTITUTION:?Set the public institution URL template}
+        REACT_APP_WEBSITE_REPORT: ${REACT_APP_WEBSITE_REPORT:?Set the public report URL template}
+        REACT_APP_ESCO_API: ${REACT_APP_ESCO_API:-https://ec.europa.eu/esco/api/search}
+    environment:
+      NEXTAUTH_URL: ${NEXTAUTH_URL:?Set the public HTTPS URL of this admin}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:?Set a strong persistent authentication secret}
+      NEXTAUTH_URL_INTERNAL: http://127.0.0.1:3000
+      DJANGO_API_BASE: ${DJANGO_API_BASE:?Set the Django API URL reachable from the container}
+    # The host's HTTPS reverse proxy forwards requests to this loopback port.
+    ports:
+      - "127.0.0.1:${ADMIN_PORT:-3000}:3000"
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m,mode=1777
+      - /app/.next/cache:rw,noexec,nosuid,size=128m,uid=1001,gid=1001,mode=0700
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

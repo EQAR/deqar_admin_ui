@@ -1,0 +1,17 @@
+# Only application source and build inputs belong in the build context.
+**
+!package.json
+!package-lock.json
+!next.config.mjs
+!jsconfig.json
+!eslint.config.mjs
+!src/
+!src/**
+!public/
+!public/**
+
+# Never include environment files, even if added under an allowed directory.
+**/.env*
+**/.DS_Store
+**/*.pem
+**/*.key
