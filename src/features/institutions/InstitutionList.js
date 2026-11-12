@@ -110,7 +110,7 @@ const InstitutionList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Education providers could not be loaded"
+                    title="Education providers could not be loaded"
                     description={error?.response?.data?.detail || error?.response?.data?.error || error.message}
                     style={{ marginBottom: 16 }}
                 />

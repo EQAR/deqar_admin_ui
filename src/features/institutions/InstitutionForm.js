@@ -448,7 +448,7 @@ const InstitutionForm = ({ mode, id }) => {
                     closable
                     type="error"
                     showIcon
-                    message="The record could not be saved"
+                    title="The record could not be saved"
                     description={generalErrors.map((message, index) => <div key={index}>{message}</div>)}
                     className={style.FormAlert}
                 />
