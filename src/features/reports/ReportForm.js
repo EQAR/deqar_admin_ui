@@ -293,7 +293,7 @@ const ReportForm = ({ mode, id, scope = "reference" }) => {
                 await http.delete(reportsApi.detail(id));
                 await refreshReport();
                 setInfoOpen(true);
-                notification.success({ message: "Deletion was requested" });
+                notification.success({ title: "Deletion was requested" });
             },
         });
     };
@@ -307,7 +307,7 @@ const ReportForm = ({ mode, id, scope = "reference" }) => {
             async onOk() {
                 await http.delete(reportsApi.removeFlag(flagId));
                 await refreshReport();
-                notification.success({ message: "Flag was removed" });
+                notification.success({ title: "Flag was removed" });
             },
         });
     };
@@ -416,7 +416,7 @@ const ReportForm = ({ mode, id, scope = "reference" }) => {
                     closable
                     type="error"
                     showIcon
-                    message="The report could not be saved"
+                    title="The report could not be saved"
                     description={generalErrors.map((message, index) => <div key={index}>{message}</div>)}
                     className={style.FormAlert}
                 />

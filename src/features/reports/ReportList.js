@@ -178,7 +178,7 @@ const ReportList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Reports could not be loaded"
+                    title="Reports could not be loaded"
                     description={error?.response?.data?.detail || error?.response?.data?.error || error.message}
                     style={{ marginBottom: 16 }}
                 />
