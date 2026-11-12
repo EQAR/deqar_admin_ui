@@ -108,7 +108,7 @@ const MyAgencyList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Your agencies could not be loaded"
+                    title="Your agencies could not be loaded"
                     description={error?.response?.data?.detail || error?.response?.data?.error || error.message}
                     style={{ marginBottom: 16 }}
                 />
