@@ -128,7 +128,7 @@ const CountryList = () => {
                 <Alert
                     type="error"
                     showIcon
-                    message="Countries could not be loaded"
+                    title="Countries could not be loaded"
                     description={error?.response?.data?.detail || error.message}
                     style={{ marginBottom: 16 }}
                 />
