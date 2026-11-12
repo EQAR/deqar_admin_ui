@@ -19,6 +19,15 @@ production builds use `.next`.
 Requires Docker with BuildKit and the Docker Compose plugin. The deployment assumes
 an existing Django API and a host reverse proxy that terminates HTTPS.
 
+The base configuration is `docker-compose.yml`. On the production server, keep
+your existing `docker-compose.override.yml` with its `admin.cgroup_parent`
+setting. For a new server using the same systemd slice, copy
+`docker-compose.override.yml.example` to `docker-compose.override.yml`. The
+example is not loaded automatically and does not affect local development.
+Compose automatically merges `docker-compose.yml` and `docker-compose.override.yml`
+when invoked without `-f`; see the [Compose merge documentation](https://docs.docker.com/compose/how-tos/multiple-compose-files/merge/).
+When using `-f`, pass both files explicitly in that order.
+
 1. Create the production configuration:
 
    ```bash
@@ -34,6 +43,8 @@ an existing Django API and a host reverse proxy that terminates HTTPS.
    prefix expected before `/auth/jwt/create/` and other API endpoints, with no
    trailing slash. `localhost` in `DJANGO_API_BASE` means the admin container;
    use a reachable hostname, or a service name on a shared Docker network.
+   Keep `DEQAR_ADMIN_PORT` equal to the old deployment's host port so the reverse
+   proxy can continue using it.
 
 3. Build and start:
 
@@ -43,7 +54,7 @@ an existing Django API and a host reverse proxy that terminates HTTPS.
    ```
 
 4. Configure the host reverse proxy to send the public admin hostname to
-   `http://127.0.0.1:3000` (or the chosen `ADMIN_PORT`). Preserve `Host` and forward
+   `http://127.0.0.1:3000` (or the chosen `DEQAR_ADMIN_PORT`). Preserve `Host` and forward
    `X-Forwarded-Proto` and `X-Forwarded-For`. Set request size limits and timeouts
    to accommodate report and CSV uploads. HTTPS is required for the application's
    secure authentication cookies.
@@ -51,6 +62,23 @@ an existing Django API and a host reverse proxy that terminates HTTPS.
 The port binds only to host loopback. If the reverse proxy runs in Docker, attach
 both services to a shared network and proxy to `admin:3000`; adapt the Compose
 network configuration to your deployment.
+
+### Replacing the older admin deployment
+
+Replace the old `docker-compose.yml` with this project's base file and retain the
+server's override. Use only one base file: remove the previously supplied
+`docker-compose.yaml` if it is present, to avoid ambiguous default file selection.
+The new container listens on port `3000`, so its port mapping is
+`127.0.0.1:${DEQAR_ADMIN_PORT:-3000}:3000` instead of `${DEQAR_ADMIN_PORT}:80`.
+Publishing on loopback assumes the reverse proxy runs on the same host; the old
+mapping published on all host interfaces.
+
+Keep the same Compose project name used by the old deployment, including any
+existing `-p` option or `COMPOSE_PROJECT_NAME` setting, to replace the existing
+`admin` service. The base file does not force a project name. Without an explicit
+project name, Compose derives it from the project directory, so deploy from the
+same directory or set the old project name explicitly. The obsolete `version: '3'`
+header is not needed with the Compose plugin.
 
 ### Configuration
 
@@ -64,7 +92,7 @@ network configuration to your deployment.
 | `REACT_APP_WEBSITE_INSTITUTION` | Build | Public institution URL template containing `{id}` |
 | `REACT_APP_WEBSITE_REPORT` | Build | Public report URL template containing `{id}` |
 | `REACT_APP_ESCO_API` | Build | Browser-accessible ESCO search endpoint |
-| `ADMIN_PORT` | Compose | Host loopback port; defaults to `3000` |
+| `DEQAR_ADMIN_PORT` | Compose | Existing host port, bound to loopback; defaults to `3000` |
 | `IMAGE_TAG` | Compose | Local image tag; defaults to `latest` |
 
 Compose supplies `NEXTAUTH_URL_INTERNAL=http://127.0.0.1:3000` for internal auth
